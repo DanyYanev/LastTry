@@ -6,6 +6,10 @@ buildscript {
         jcenter()
     }
     dependencies {
+
+        // Git plugin for Gradle
+        classpath 'org.ajoberstar:gradle-git:0.6.3'
+
     }
 }
 
@@ -45,6 +49,7 @@ project(":desktop") {
     }
 }
 
+
 project(":core") {
     apply plugin: "java"
 
@@ -57,8 +62,10 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
 
         // Reflection
-        compile group: 'com.google.guava', name: 'guava', version: '19.0'
         compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
+
+        // https://mvnrepository.com/artifact/org.reflections/reflections
+        compile group: 'org.reflections', name: 'reflections', version: '0.9.10'
     }
 }
 
